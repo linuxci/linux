@@ -265,6 +265,7 @@ static bool static_key_slow_try_dec(struct static_key *key)
 	 * acquires the jump label lock the value is back to one and the
 	 * retry under the lock must succeed.
 	 */
+        WARN_ON_ONCE(1);
 	v = atomic_read(&key->enabled);
 	do {
 		/*
